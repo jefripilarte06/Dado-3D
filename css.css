@@ -1,0 +1,804 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: rgb(43, 43, 43);
+    height: 100vh;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+
+            /* Contenedor de la botonera de dados primario */
+
+
+
+.contenedor{
+    position: absolute;
+    top: 9vw;
+    left: 14.5vw;
+}
+
+.dado1{
+    position: absolute;
+    width: auto;
+    height: auto;
+    background-color: rgb(34, 34, 34);
+    border: 2px solid rgb(53, 53, 53);
+    border-radius: 8px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.dado1 > .cara{
+    height: 9.5vw;
+    width: 9.5vw;
+    margin: 1.1vw;
+}
+
+.dado1 > .cara{
+    box-shadow: 2px 2px 15px #000;
+    cursor: pointer;
+    transition: 110ms;
+    border: 2px solid rgba(129, 129, 129, 0.836);
+    border-radius: 8px;
+    background-color: rgb(58, 58, 58);
+}
+
+.dado1 > .cara:hover{
+    transform: scale(106%);
+    transition: 140ms;
+    border: 2px solid rgba(160, 160, 160, 0.24);
+    background-color: rgb(34, 34, 34);
+}
+
+.dado1 > .cara > .puntos{
+    width: 2.1vw;
+    height: 2.1vw;
+    box-shadow: 0.4px 0.4px 5px rgb(20, 20, 20);
+}
+
+
+
+            /* Contenedor de la botonera de dados secundario */
+
+
+
+.contenedor.sec{
+    top: 38vw;
+    left: 49.5vw;
+    z-index: 2;
+}
+
+.dado1.sec{
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+}
+
+.dado1.sec > .cara{
+    height: 4.4vw;
+    width: 4.4vw;
+    margin: 0.6vw;
+    background-color: rgb(46, 46, 46);
+    box-shadow: 1px 1px 8px rgb(0, 0, 0);
+}
+
+.dado1.sec > .cara > .puntos{
+    width: 0.8vw;
+    height: 0.8vw;
+    box-shadow: 0.4px 0.4px 5px rgb(20, 20, 20);
+}
+
+.dado1.sec > .cara:hover{
+    transform: scale(106%);
+    transition: 140ms;
+    border: 2px solid rgba(160, 160, 160, 0.582);
+    background-color: rgb(34, 34, 34);
+}
+
+
+
+            /* Dados y efecto 3D */
+
+
+
+.container{
+    position: absolute;
+    top: 12.5vw;
+    left: 57.5vw;
+    perspective: 60vw;
+    opacity: 1;
+    transition: 350ms;
+}
+
+.dado{
+    height: 18.3vw;
+    width: 18.3vw;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg);
+    transform: rotateY(0deg);
+    transform: rotateZ(0deg);
+    transition: 480ms;
+    animation: dembowyalapausa 0s none 0s;
+}
+
+.cara{
+    height: 18.3vw;
+    width: 18.3vw;
+    background-color: rgb(75, 75, 75);
+    box-shadow: 2px 2px 10px rgb(32, 32, 32);
+}
+
+.dado > .cara{
+    position: absolute;
+    border: 3px solid rgba(80, 80, 80, 0.76);
+    background-color: rgb(50, 50, 50);
+}
+
+.dado > #lado1{
+    transform: translateZ(9vw);
+}
+
+.dado > #lado6{
+    transform: translateZ(-9.1vw);
+}
+
+.dado > #lado3{
+    right: 9.1vw;
+    transform: rotateY(-90deg);
+}
+
+.dado > #lado2{
+    left: 9.1vw;
+    transform: rotateY(90deg);
+}
+
+.dado > #lado5{
+    bottom: 9.1vw;
+    transform: rotatex(90deg);
+}
+
+.dado > #lado4{
+    top: 9.1vw;
+    transform: rotatex(-90deg);
+}
+
+
+
+            /* Maquetacion de los Puntos */
+
+
+
+.puntos{
+    background-color: rgb(175, 175, 175);
+    border-radius: 50%;
+    box-shadow: 1px 1px 12px rgba(20, 20, 20, 0.822);
+}
+
+#lado1, #lado1h, #lado1c1, #lado1c2{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.a1{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+
+.puntos.a{
+    width: 4.5vw;
+    height: 4.5vw;
+}
+
+#lado2, #lado2h, #lado2c1, #lado2c2{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.b2{
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+}
+
+.puntos.b{
+    width: 4vw;
+    height: 4vw;
+}
+
+#lado3, #lado3h, #lado3c1, #lado3c2{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.c3{
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+}
+
+.c2{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.puntos.c{
+    width: 4vw;
+    height: 4vw;
+}
+
+#lado4, #lado4h, #lado4c1, #lado4c2{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.d1{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.d2{
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+.d3{
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+.d4{
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+}
+
+.puntos.d{
+    width: 4vw;
+    height: 4vw;
+}
+
+#lado5, #lado5h, #lado5c1, #lado5c2{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.e1{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.e2{
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+.e3{
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+.e4{
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+}
+
+.e5{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.puntos.e{
+    width: 4vw;
+    height: 4vw;
+}
+
+#lado6, #lado6h, #lado6c1, #lado6c2{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.f1{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.f2{
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+.f3{
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+.f4{
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+}
+
+.f5{
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.f6{
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
+.puntos.f{
+    width: 4vw;
+    height: 4vw;
+}
+
+
+
+            /* Cubos pequeños */
+
+
+
+.dp1{
+    top: 23vw;
+    left: 53vw;
+    z-index: 1;
+}
+
+.dp2{
+    top: 12vw;
+    left: 69vw;
+}
+
+.chiquitos{
+    perspective: 65vw;
+    opacity: 0;
+    transition: 350ms;
+}
+
+.chiquitos .dado{
+    height: 10.4vw;
+    width: 10.4vw;
+}
+
+.chiquitos .dado .cara{
+    height: 10.4vw;
+    width: 10.4vw;
+}
+
+.chiquitos .dado .cara .puntos{
+    width: 2.2vw;
+    height: 2.2vw;
+}
+
+.chiquitos .dado > #lado1c1, .chiquitos .dado > #lado1c2{
+    transform: translateZ(5.17vw);
+}
+
+.chiquitos .dado > #lado6c1, .chiquitos .dado > #lado6c2{
+    transform: translateZ(-5.17vw);
+}
+
+.chiquitos .dado > #lado3c1, .chiquitos .dado > #lado3c2{
+    right: 5.17vw;
+    transform: rotateY(-90deg);
+}
+
+.chiquitos .dado > #lado2c1, .chiquitos .dado > #lado2c2{
+    left: 5.17vw;
+    transform: rotateY(90deg);
+}
+
+.chiquitos .dado > #lado5c1, .chiquitos .dado > #lado5c2{
+    bottom: 5.17vw;
+    transform: rotatex(90deg);
+}
+
+.chiquitos .dado > #lado4c1, .chiquitos .dado > #lado4c2{
+    top: 5.17vw;
+    transform: rotatex(-90deg);
+}
+
+
+
+            /* Botones */
+
+
+
+button{
+    font-size: 1.5vw;
+    background-color: rgb(37, 37, 37);
+    border: 2px solid rgba(73, 73, 73, 0.733);
+    border-radius: 5px;
+    color: rgba(219, 219, 219, 0.904);
+    text-shadow: 2px 2px 10px #161616;
+    cursor: pointer;
+    padding: 0.7vw;
+    position: absolute;
+    transition: 120ms;
+}
+
+button:hover{
+    color: rgb(230, 230, 230);
+    background-color: rgb(27, 27, 27);
+    transform: scale(105%);
+    transition: 150ms;
+}
+
+#randomBt{
+    top: 3.5vw;
+    left: 59.6vw;
+}
+
+.reset{
+    font-size: 2.2vw;
+    top: 3vw;
+    left: 20vw;
+}
+
+.reset:hover{
+    color: rgb(230, 230, 230);
+    background-color: rgb(124, 1, 1);
+    border: 2px solid rgb(17, 17, 17);
+}
+
+.opciones{
+    font-size: 1.2vw;
+    padding: 0.4vw;
+}
+
+#unDado{
+    top: 3.5vw;
+    left: 88vw;
+}
+
+#dosDados{
+    top: 6.4vw;
+    left: 87.4vw;
+}
+
+#play{
+    top: 41.8vw;
+    left: 88.8vw;
+}
+
+#pause{
+    top: 46vw;
+    left: 87vw;
+}
+
+
+
+            /* Historiales */
+
+
+
+.historial1, .historial2{
+    display: flex;
+    width: 11vw;
+    height: 25vw;
+    background-color: #202020;
+    border: 2px solid rgba(133, 133, 133, 0.685);
+    border-radius: 7px;
+    position: absolute;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    top: 11vw;
+    left: 87vw;
+    opacity: 0;
+}
+
+.historial1{
+    opacity: 1;
+    z-index: 4;
+}
+
+.historial1::-webkit-scrollbar, .historial2::-webkit-scrollbar{
+    background-color: #272727;
+    width: 0.6vw;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.historial1::-webkit-scrollbar-thumb, .historial2::-webkit-scrollbar-thumb{
+    background-color: #1a1a1a;
+    border-radius: 7px;
+}
+
+.historial1::-webkit-scrollbar-thumb:hover, .historial2::-webkit-scrollbar-thumb:hover{
+    background-color: #525252;
+}
+
+.texto{
+    font-family: sans-serif;
+    color: rgb(212, 212, 212);
+    font-size: 1.5vw;
+    padding:1vw 2.4vw 0 2.4vw;
+    height: 4vw;
+    background-color: #1a1a1a;
+    position: fixed;
+    z-index: 2;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom: 2px solid rgba(133, 133, 133, 0.685);
+}
+
+#valor1, #valor2{
+    font-family: sans-serif;
+    color: rgb(207, 207, 207);
+    font-size: 1.8vw;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    right: 0%;
+    top: 14%;
+    padding: 0.8vw;
+}
+
+
+
+            /* Animaciones */
+
+
+            
+@keyframes dembowyala {
+    0%{
+        transform: rotateX(30deg) rotateY(-30deg);
+    }
+    20%{
+        transform: rotateX(-30deg) rotateY(-30deg);
+    }
+    50%{
+        transform: rotateX(30deg) rotateY(30deg);
+    }
+    70%{
+        transform: rotateX(-30deg) rotateY(30deg);
+    }
+    100%{
+        transform: rotateX(30deg) rotateY(-30deg);
+    }
+}
+
+@keyframes dembowyalac1 {
+    0%{
+        transform: rotateX(-30deg) rotateY(30deg);
+    }
+    20%{
+        transform: rotateX(30deg) rotateY(30deg);
+    }
+    50%{
+        transform: rotateX(-30deg) rotateY(-30deg);
+    }
+    70%{
+        transform: rotateX(30deg) rotateY(-30deg);
+    }
+    100%{
+        transform: rotateX(-30deg) rotateY(30deg);
+    }
+}
+
+@keyframes dembowyalac2 {
+    0%{
+        transform: rotateX(10deg) rotateZ(5deg);
+    }
+    20%{
+        transform: rotateX(-10deg) rotateZ(0deg);
+    }
+    50%{
+        transform: rotateX(10deg) rotateZ(-5deg);
+    }
+    70%{
+        transform: rotateX(-10deg) rotateZ(0deg);
+    }
+    100%{
+        transform: rotateX(10deg) rotateZ(5deg);
+    }
+}
+
+@keyframes dembowyalapausa {
+    0%{}
+    100%{}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .dado{
+    width: 400px;
+    height: 400px;
+    background-color: rgb(75, 75, 75);
+    border-radius: 20px;
+    box-shadow: 2px 2px 15px #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 700ms;
+    cursor: pointer;
+}
+
+.punto{
+    width: 75px;
+    height: 75px;
+    background-color: rgb(175, 175, 175);
+    border-radius: 50%;
+    box-shadow: 1px 1px 15px rgb(20, 20, 20);
+} */

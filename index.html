@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <title>Practica JavaScript</title>
+</head>
+<body>
+
+    <!-- Botones -->
+
+<button id="randomBt"><b>Número Aleatorio</b></button>
+
+<button id="reset" class="reset"><b>REINICIAR</b></button>
+
+<button class="opciones" id="unDado"><b>Solo un Dado</b></button>
+<button class="opciones" id="dosDados"><b>Usar dos Dados</b></button>
+
+<button id="play"><b>EL YALA</b></button>
+<button id="pause"><b>TA BUENO YA</b></button>
+
+    <!-- Historiales -->
+
+<div class="historial1" id="historial1">
+    <div class="texto"><b>Historial</b></div>
+    <p id="valor1"></p>
+</div>
+
+<div class="historial2" id="historial2">
+    <div class="texto"><b>Historial</b></div>
+    <p id="valor2"></p>
+</div>
+
+    <!-- Contenedor de la botonera de dados primario -->
+
+    <div class="contenedor">
+        <div class="dado1">
+            <div class="cara" id="lado1">
+                <div class="puntos a a1"></div>
+            </div>
+            <div class="cara" id="lado2">
+                <div class="puntos b b1"></div>
+                <div class="puntos b b2"></div>
+            </div>    
+            <div class="cara" id="lado3">
+                <div class="puntos c c1"></div>
+                <div class="puntos c c2"></div>
+                <div class="puntos c c3"></div>
+            </div>
+            <div class="cara" id="lado4">
+                <div class="puntos d d1"></div>
+                <div class="puntos d d2"></div>
+                <div class="puntos d d3"></div>
+                <div class="puntos d d4"></div>
+            </div>
+            <div class="cara" id="lado5">
+                <div class="puntos e e1"></div>
+                <div class="puntos e e2"></div>
+                <div class="puntos e e3"></div>
+                <div class="puntos e e4"></div>
+                <div class="puntos e e5"></div>
+            </div>
+            <div class="cara" id="lado6">
+                <div class="puntos f f1"></div>
+                <div class="puntos f f2"></div>
+                <div class="puntos f f3"></div>
+                <div class="puntos f f4"></div>
+                <div class="puntos f f5"></div>
+                <div class="puntos f f6"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor de la botonera de dados secundario -->
+
+    <div class="contenedor sec">
+        <div class="dado1  sec">
+            <div class="cara" id="lado1h">
+                <div class="puntos a a1"></div>
+            </div>
+            <div class="cara" id="lado2h">
+                <div class="puntos b b1"></div>
+                <div class="puntos b b2"></div>
+            </div>    
+            <div class="cara" id="lado3h">
+                <div class="puntos c c1"></div>
+                <div class="puntos c c2"></div>
+                <div class="puntos c c3"></div>
+            </div>
+            <div class="cara" id="lado4h">
+                <div class="puntos d d1"></div>
+                <div class="puntos d d2"></div>
+                <div class="puntos d d3"></div>
+                <div class="puntos d d4"></div>
+            </div>
+            <div class="cara" id="lado5h">
+                <div class="puntos e e1"></div>
+                <div class="puntos e e2"></div>
+                <div class="puntos e e3"></div>
+                <div class="puntos e e4"></div>
+                <div class="puntos e e5"></div>
+            </div>
+            <div class="cara" id="lado6h">
+                <div class="puntos f f1"></div>
+                <div class="puntos f f2"></div>
+                <div class="puntos f f3"></div>
+                <div class="puntos f f4"></div>
+                <div class="puntos f f5"></div>
+                <div class="puntos f f6"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dado principal -->
+
+    <div class="container" id="c">
+        <div class="dado" id="dado">
+            <div class="cara" id="lado1">
+                <div class="puntos a a1"></div>
+            </div>
+            <div class="cara" id="lado2">
+                <div class="puntos b b1"></div>
+                <div class="puntos b b2"></div>
+            </div>    
+            <div class="cara" id="lado3">
+                <div class="puntos c c1"></div>
+                <div class="puntos c c2"></div>
+                <div class="puntos c c3"></div>
+            </div>
+            <div class="cara" id="lado4">
+                <div class="puntos d d1"></div>
+                <div class="puntos d d2"></div>
+                <div class="puntos d d3"></div>
+                <div class="puntos d d4"></div>
+            </div>
+            <div class="cara" id="lado5">
+                <div class="puntos e e1"></div>
+                <div class="puntos e e2"></div>
+                <div class="puntos e e3"></div>
+                <div class="puntos e e4"></div>
+                <div class="puntos e e5"></div>
+            </div>
+            <div class="cara" id="lado6">
+                <div class="puntos f f1"></div>
+                <div class="puntos f f2"></div>
+                <div class="puntos f f3"></div>
+                <div class="puntos f f4"></div>
+                <div class="puntos f f5"></div>
+                <div class="puntos f f6"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dados chiquitos -->
+
+    <div class="container dp1 chiquitos" id="c1">
+        <div class="dado" id="dadoc1">
+            <div class="cara" id="lado1c1">
+                <div class="puntos a a1"></div>
+            </div>
+            <div class="cara" id="lado2c1">
+                <div class="puntos b b1"></div>
+                <div class="puntos b b2"></div>
+            </div>    
+            <div class="cara" id="lado3c1">
+                <div class="puntos c c1"></div>
+                <div class="puntos c c2"></div>
+                <div class="puntos c c3"></div>
+            </div>
+            <div class="cara" id="lado4c1">
+                <div class="puntos d d1"></div>
+                <div class="puntos d d2"></div>
+                <div class="puntos d d3"></div>
+                <div class="puntos d d4"></div>
+            </div>
+            <div class="cara" id="lado5c1">
+                <div class="puntos e e1"></div>
+                <div class="puntos e e2"></div>
+                <div class="puntos e e3"></div>
+                <div class="puntos e e4"></div>
+                <div class="puntos e e5"></div>
+            </div>
+            <div class="cara" id="lado6c1">
+                <div class="puntos f f1"></div>
+                <div class="puntos f f2"></div>
+                <div class="puntos f f3"></div>
+                <div class="puntos f f4"></div>
+                <div class="puntos f f5"></div>
+                <div class="puntos f f6"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container dp2 chiquitos" id="c2">
+        <div class="dado" id="dadoc2">
+            <div class="cara" id="lado1c2">
+                <div class="puntos a a1"></div>
+            </div>
+            <div class="cara" id="lado2c2">
+                <div class="puntos b b1"></div>
+                <div class="puntos b b2"></div>
+            </div>    
+            <div class="cara" id="lado3c2">
+                <div class="puntos c c1"></div>
+                <div class="puntos c c2"></div>
+                <div class="puntos c c3"></div>
+            </div>
+            <div class="cara" id="lado4c2">
+                <div class="puntos d d1"></div>
+                <div class="puntos d d2"></div>
+                <div class="puntos d d3"></div>
+                <div class="puntos d d4"></div>
+            </div>
+            <div class="cara" id="lado5c2">
+                <div class="puntos e e1"></div>
+                <div class="puntos e e2"></div>
+                <div class="puntos e e3"></div>
+                <div class="puntos e e4"></div>
+                <div class="puntos e e5"></div>
+            </div>
+            <div class="cara" id="lado6c2">
+                <div class="puntos f f1"></div>
+                <div class="puntos f f2"></div>
+                <div class="puntos f f3"></div>
+                <div class="puntos f f4"></div>
+                <div class="puntos f f5"></div>
+                <div class="puntos f f6"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="dados.js"></script>
+    <script src="botones.js"></script>
+</body>
+</html>
